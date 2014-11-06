@@ -1,17 +1,3 @@
-#app_root = "#{deploy[:deploy_to]}/current"
-#node[:deploy].each do |application, deploy|
-#  execute "mkdir #{app_root}" do
-#  execute "chmod -R g+rw #{app_root}" do
-#  end
-#end
-#
-#git "#{deploy[:deploy_to]}/current" do
-#  repository "git://github.com/opscode/chef.git"
-#  reference "master"
-#  action :sync
-#end
-#
-
 include_recipe 'deploy'
 
 node[:deploy].each do |application, deploy|
