@@ -2,7 +2,7 @@ node['c360-harvest']['programs'].each do |program|
   bash "reloading #{program}" do
     user "root"
     code <<-EOH
-    pid = `supervisorctl -c /etc/supervisor/supervisord.conf pid #{program}`
+    pid=`supervisorctl -c /etc/supervisor/supervisord.conf pid #{program}`
     if [[ $pid != *[!0-9]* ]]; then
         kill -HUP $pid
     else
